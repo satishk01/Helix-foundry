@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    // Resolve the in-repo packages by source so typecheck and package builds
+    // work under either pnpm or plain npm, with no node_modules link.
+    "paths": {
+      "@helix-foundry/shared": ["./packages/shared/src/index.ts"],
+      "@helix-foundry/sdk": ["./packages/sdk/src/index.ts"]
+    },
+    "types": ["node", "vite/client"]
+  },
+  "include": ["apps", "packages", "services", "scripts", "tests", "*.ts"]
+}
